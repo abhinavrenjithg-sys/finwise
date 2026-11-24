@@ -3,7 +3,8 @@ __pycache__/
 venv/
 .venv/
 .env
-*.csv
+finwise_*_report_*.csv
 .DS_Store
+Thumbs.db
 .idea/
 .vscode/

@@ -518,6 +518,7 @@ def loan_yearly_bar_chart(yearly):
     ))
     fig.update_layout(barmode="stack", bargap=0.35)
     _base_layout(fig, height=340)
+    fig.update_layout(legend_traceorder="normal")  # show Principal first in the legend
     _inr_y_axis(fig, (yearly["Principal Paid"] + yearly["Interest Paid"]).max())
     fig.update_xaxes(title_text="Loan year", dtick=1 if len(yearly) <= 15 else None)
     return fig
@@ -1004,7 +1005,7 @@ def footer():
     st.markdown(
         f'<div class="footer"><b>FinWise</b> – Smart Financial Calculator · Built with Python, Streamlit & Plotly<br>'
         f"For educational purposes only. Not financial advice. SIP returns are estimates and are not guaranteed.<br>"
-        f"© {date.today().year} FinWise. All rights reserved.</div>",
+        f"© {date.today().year} FinWise · Open source under the MIT License</div>",
         unsafe_allow_html=True,
     )
 
